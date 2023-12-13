@@ -1,62 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fruit</title>
-    <!-- google font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font awesome  -->
-    <script src="https://kit.fontawesome.com/d7ccbdf6ee.js" crossorigin="anonymous"></script>
-    <!-- css link  -->
-    <link rel="stylesheet" href="output.css" />
-    <style>
-      .font-lato {
-        font-family: "Lato", sans-serif;
-      }
-    </style>
-  </head>
-  <body class="font-lato mx-2">
-    <header class="max-w-screen-xl mx-auto">
-      <nav
-        class="relative flex justify-between items-center bg-fruit-primary rounded-lg py-4 px-4 md:px-12"
-      >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruit</title>
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet" />
+  <!-- font awesome  -->
+  <script src="https://kit.fontawesome.com/d7ccbdf6ee.js" crossorigin="anonymous"></script>
+  <!-- css link  -->
+  <link rel="stylesheet" href="output.css" />
+  <style>
+    .font-lato {
+      font-family: "Lato", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="font-lato mx-2">
+  <!-- header  -->
+  <header class="max-w-screen-xl mx-auto">
+    <!-- navbar  -->
+    <nav class="relative  z-20 flex justify-between items-center bg-fruit-primary rounded-lg py-4 px-4 md:px-12 ">
       <!-- nav links  -->
-        <div id="nav-links" class="hidden lg:block absolute lg:static right-0 top-[109px] md:top-[76px] w-full lg:w-auto  bg-red-200 lg:bg-fruit-primary rounded-b-lg md:rounded-lg py-4">
-          <ul class="flex items-center flex-col lg:flex-row gap-4 lg:gap-10 lg:text-white text-lg font-medium">
-            <li><a class="text-lg font-medium hover:text-blue-600" href="#">Home</a></li>
-            <li><a class="text-lg font-medium hover:text-blue-600" href="#">About Us</a></li>
-            <li><a class="text-lg font-medium hover:text-blue-600" href="#">Shop</a></li>
-            <li><a class="text-lg font-medium hover:text-blue-600" href="#">All Fruits</a></li>
-          </ul>
+      <div id="nav-links"
+        class=" hidden lg:block absolute lg:static right-0 top-[109px] md:top-[76px] w-full lg:w-auto  bg-red-200 lg:bg-fruit-primary rounded-b-lg md:rounded-lg py-4 ">
+        <ul class="flex items-center flex-col lg:flex-row gap-4 lg:gap-10 lg:text-white text-lg font-medium">
+          <li><a class="text-lg font-medium hover:text-blue-600" href="#">Home</a></li>
+          <li><a class="text-lg font-medium hover:text-blue-600" href="#">About Us</a></li>
+          <li><a class="text-lg font-medium hover:text-blue-600" href="#">Shop</a></li>
+          <li><a class="text-lg font-medium hover:text-blue-600" href="#">All Fruits</a></li>
+        </ul>
+      </div>
+      <!-- logo  -->
+      <div class="flex items-center gap-4">
+        <img class="w-10" src="../assets/images/logo.png" alt="" />
+        <h1 class=" text-2xl  md:text-3xl lg:text-4xl text-white font-bold">Fruit Burst</h1>
+      </div>
+      <!-- search and menu bar  -->
+      <div class="flex items-center gap-2">
+        <div id="search-box"
+          class="absolute md:static hidden md:block right-0 top-[76px] w-full text-center bg-red-200 rounded-t-lg md:rounded-full py-1 md:py-0">
+          <input type="text" placeholder="Type here" class=" input input-bordered input-sm w-full max-w-xs" />
         </div>
-        <!-- logo  -->
-        <div class="flex items-center gap-4">
-          <img class="w-10" src="../assets/images/logo.png" alt="" />
-          <h1 class=" text-2xl  md:text-3xl lg:text-4xl text-white font-bold">Fruit Burst</h1>
+        <i onclick="toggleBtn(this)" class=" lg:hidden fa-solid fa-bars text-2xl text-white"></i>
+      </div>
+    </nav>
+    <!-- carousel  -->
+    <div class="relative z-10">
+      <div class="carousel w-full">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img src="../assets/images/banner1.png" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide4" class="btn btn-circle">❮</a>
+            <a href="#slide2" class="btn btn-circle">❯</a>
+          </div>
         </div>
-        <!-- search and menu bar  -->
-        <div class="flex items-center gap-2">
-         <div id="search-box" class="absolute md:static hidden md:block right-0 top-[76px] w-full text-center bg-red-200 rounded-t-lg md:rounded-full py-1 md:py-0">
-            <input
-            type="text"
-            placeholder="Type here"
-            class=" input input-bordered input-sm w-full max-w-xs"
-          />
-         </div>
-          <i onclick="toggleBtn(this)" class=" lg:hidden fa-solid fa-bars text-2xl text-white"></i>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img src="../assets/images/banner2.png" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" class="btn btn-circle">❮</a>
+            <a href="#slide3" class="btn btn-circle">❯</a>
+          </div>
         </div>
-      </nav>
-    </header>
-    <!-- main  -->
-    <main></main>
-    <!-- footer  -->
-    <footer></footer>
-    <script src="script.js"></script>
-  </body>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img src="../assets/images/banner3.png" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" class="btn btn-circle">❮</a>
+            <a href="#slide4" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img src="../assets/images/banner4.png" class="w-full" />
+          <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" class="btn btn-circle">❮</a>
+            <a href="#slide1" class="btn btn-circle">❯</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- main  -->
+  <main></main>
+  <!-- footer  -->
+  <footer></footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
