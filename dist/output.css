@@ -1058,6 +1058,15 @@ html {
   gap: 0.5rem;
 }
 
+.footer-center {
+  place-items: center;
+  text-align: center;
+}
+
+.footer-center > * {
+  place-items: center;
+}
+
 @media (min-width: 48rem) {
   .footer {
     grid-auto-flow: column;
@@ -1791,10 +1800,6 @@ html {
   grid-row-start: 7;
 }
 
-.m-4 {
-  margin: 1rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -1844,18 +1849,6 @@ html {
   margin-top: 1rem;
 }
 
-.ml-auto {
-  margin-left: auto;
-}
-
-.mr-0 {
-  margin-right: 0px;
-}
-
-.ml-\[100px\] {
-  margin-left: 100px;
-}
-
 .flex {
   display: flex;
 }
@@ -1880,6 +1873,10 @@ html {
   width: 2.5rem;
 }
 
+.w-16 {
+  width: 4rem;
+}
+
 .w-2\/3 {
   width: 66.666667%;
 }
@@ -1890,14 +1887,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-12 {
-  width: 3rem;
-}
-
-.w-16 {
-  width: 4rem;
 }
 
 .max-w-\[615px\] {
@@ -1929,12 +1918,20 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-center {
@@ -2013,10 +2010,6 @@ html {
   border-radius: 0.75rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -2030,6 +2023,11 @@ html {
 .bg-base-100 {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-fruit-primary {
@@ -2052,13 +2050,12 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
+}
+
+.fill-current {
+  fill: currentColor;
 }
 
 .object-contain {
@@ -2066,9 +2063,8 @@ html {
      object-fit: contain;
 }
 
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-4 {
@@ -2137,6 +2133,11 @@ html {
   line-height: 1.75rem;
 }
 
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2164,6 +2165,11 @@ html {
   color: var(--fallback-nc,oklch(var(--nc)/var(--tw-text-opacity)));
 }
 
+.text-primary-content {
+  --tw-text-opacity: 1;
+  color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -2172,11 +2178,6 @@ html {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .shadow-xl {
@@ -2288,29 +2289,13 @@ html {
     grid-row-start: 3;
   }
 
-  .lg\:m-auto {
-    margin: auto;
-  }
-
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
   }
 
-  .lg\:me-auto {
-    margin-inline-end: auto;
-  }
-
   .lg\:ml-auto {
     margin-left: auto;
-  }
-
-  .lg\:mr-0 {
-    margin-right: 0px;
-  }
-
-  .lg\:ms-auto {
-    margin-inline-start: auto;
   }
 
   .lg\:block {
@@ -2321,16 +2306,8 @@ html {
     display: none;
   }
 
-  .lg\:h-full {
-    height: 100%;
-  }
-
   .lg\:w-auto {
     width: auto;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:max-w-xl {
@@ -2365,14 +2342,13 @@ html {
     gap: 6rem;
   }
 
+  .lg\:gap-6 {
+    gap: 1.5rem;
+  }
+
   .lg\:bg-fruit-primary {
     --tw-bg-opacity: 1;
     background-color: rgb(248 85 89 / var(--tw-bg-opacity));
-  }
-
-  .lg\:object-cover {
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 
   .lg\:text-left {
@@ -2386,6 +2362,11 @@ html {
   .lg\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
   }
 
   .lg\:text-white {
